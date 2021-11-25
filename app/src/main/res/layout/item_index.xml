@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="demo"
+            type="com.example.hupudemo.viewModel.IndexFragmentViewModel" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="99dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:id="@+id/item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="title"
+                android:textSize="20dp"/>
+            <RelativeLayout
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:id="@+id/nice_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="niceData"/>
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:id="@+id/item_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="author" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+    </LinearLayout>
+
+
+</layout>

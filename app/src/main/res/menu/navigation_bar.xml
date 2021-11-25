@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_bar_index"
+        android:icon="@drawable/btn_index"
+        android:title="首页"/>
+
+    <item
+        android:id="@+id/bottom_drive"
+        android:title=""
+   />
+
+    <item
+        android:id="@+id/bottom_bar_mine"
+        android:icon="@drawable/btn_mine"
+        android:title="我的"/>
+
+
+</menu>

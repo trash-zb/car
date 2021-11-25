@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:gravity="right"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/btn_exit"
+        android:background="@drawable/exit"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:src="@drawable/load"
+            android:scaleType="fitXY"
+            android:id="@+id/pic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout
+            android:id="@+id/data_layout"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="50dp"
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="使用时长" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:textSize="40dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="火焰传感器"
+                    android:id="@+id/fire"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <TextView
+                    android:textColor="@color/black"
+                    android:textSize="40dp"
+                    android:gravity="center"
+                    android:text="雨滴传感器"
+                    android:id="@+id/rain"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:text="点此登录"
+            android:background="@drawable/btn_red"
+            android:layout_margin="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:text="三个字"
+        android:textSize="25dp"/>
+
+</RelativeLayout>
+
