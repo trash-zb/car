@@ -16,19 +16,19 @@ import retrofit2.http.Url
 
 class IndexDetailsActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityIndexDetailsBinding
+    private var binding : ActivityIndexDetailsBinding? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIndexDetailsBinding.inflate(LayoutInflater.from(this))
-        setContentView(binding.root)
-        var url = intent.getStringExtra("myUrl")
+        setContentView(binding?.root)
+        val url = intent.getStringExtra("myUrl")
         Log.i("XXX", "onCreate: ")
         //开启和H5的交互页面
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.settings.domStorageEnabled = true
+        binding?.webView?.settings?.javaScriptEnabled = true
+        binding?.webView?.settings?.domStorageEnabled = true
         /*允许ssl证书*/
-        binding.webView?.webViewClient = object : WebViewClient() {
+        binding?.webView?.webViewClient = object : WebViewClient() {
             override fun onReceivedSslError(
                 webview: WebView?,
                 handler: SslErrorHandler?,
@@ -45,9 +45,9 @@ class IndexDetailsActivity : AppCompatActivity() {
             }
         }
 
-        binding.webView.webViewClient = WebViewClient()
+        binding?.webView?.webViewClient = WebViewClient()
         if (url != null) {
-            binding.webView.loadUrl(url)
+            binding?.webView?.loadUrl(url)
         }
 
     }

@@ -18,7 +18,7 @@ import com.example.hupudemo.viewModel.IndexFragmentViewModel
 import com.example.hupudemo.viewModel.MineFragmentViewModel
 import kotlin.math.log
 
-class IndexFragment private constructor(): Fragment(){
+class IndexFragment public constructor(): Fragment(){
     private val TAG = "XXX"
     private lateinit var binding : FragmentIndexBinding
     private var indexFragmentViewModel = IndexFragmentViewModel()

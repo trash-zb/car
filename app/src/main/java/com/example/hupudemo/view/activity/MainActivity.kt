@@ -1,9 +1,11 @@
 package com.example.hupudemo.view.activity
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
@@ -18,11 +20,14 @@ import com.example.hupudemo.view.utils.FragmentAdapter
 import com.example.hupudemo.viewModel.IndexFragmentViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import org.chromium.net.CronetEngine
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
     private val TAG = "XXX"
     private lateinit var mDataBindind : ActivityMainBinding
     private var fragmentList = mutableListOf<Fragment>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +72,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.btn_car -> Log.i(TAG, "onC")
+            R.id.btn_car -> {
+                Toast.makeText(this,"请登录后使用该功能！",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

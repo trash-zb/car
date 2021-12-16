@@ -15,5 +15,4 @@ class LogInterceptor : Interceptor {
         Log.i(TAG, "response -> $response")
         return response
     }
-
 }

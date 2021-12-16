@@ -1,6 +1,7 @@
 package com.example.mvvmdemo.Api
 
 import com.example.hupudemo.model.Car
+import com.example.hupudemo.model.Data
 import com.example.hupudemo.model.IndexInfo
 import com.example.hupudemo.model.Mine
 import com.example.mvvmdemo.Bean.Student
@@ -17,9 +18,19 @@ interface WanAndroidApi {
     @POST("/login")
     suspend fun login(@Field("username")username : String, @Field("password")password : String) : Boolean
 
-    @POST("/sqx_send")
+    @GET("/sqx_send")
     suspend fun getCarInfo() : Car
 
     @GET("/getUserInfo")
     suspend fun getUserInfo(@Query("username")username: String) : Mine
+
+    @GET("/sendFromAndroid")
+    suspend fun sendFromAndroid(@Query("data") data : String)
+
+    @FormUrlEncoded
+    @POST("/sendFromAndroid01")
+    suspend fun sendFromAndroid01(@Body data : Car)
+
+    @GET("/article/list/1/json")
+    fun getInfo() : Call<Car>
 }

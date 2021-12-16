@@ -16,7 +16,7 @@ import com.example.hupudemo.databinding.FragmentMineBinding
 import com.example.hupudemo.view.activity.LoginActivity
 import com.example.hupudemo.viewModel.MineFragmentViewModel
 
-class MineFragment private constructor(): Fragment() ,View.OnClickListener{
+class MineFragment  constructor(): Fragment() ,View.OnClickListener{
 
     private val mineFragmentViewModel = MineFragmentViewModel()
     private lateinit var binding : FragmentMineBinding
@@ -24,6 +24,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
     companion object {
         private lateinit var mineFragment : MineFragment
         fun getInstance() =
+            //一个fragment 使用一次  复用需
             if (!this::mineFragment.isInitialized){
                 mineFragment = MineFragment()
                 mineFragment
@@ -35,6 +36,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        //定义  destoryView 中销毁
         return binding.root
     }
 
@@ -42,6 +44,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //onCreateView中
         binding = FragmentMineBinding.inflate(LayoutInflater.from(activity))
         initClick()
         MineFragmentViewModel.isLogin.observe(this,{
@@ -66,7 +69,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
                                 "状态安全！"
                             }
                         }
-                        binding.rain.text = it?.humidity.toString() + "°C"
+//                        binding.rain.text = it?.temperature.toString() + "°C"
                     })
                     vm.userInfo.observe(this,{
                         binding.time.text = it.time
@@ -84,7 +87,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
                 binding.btnLogin.visibility = View.VISIBLE
                 binding.tvName.visibility = View.INVISIBLE
                 Glide.with(activity)
-                    .load(R.drawable.load)
+                    .load("https://imgtu.com/i/oAR8l8")
                     .placeholder(R.drawable.load)  // 占位图
                     .error(R.drawable.error) // 异常加载占位图
                     .into(binding.pic)
@@ -111,7 +114,7 @@ class MineFragment private constructor(): Fragment() ,View.OnClickListener{
     private fun initData() {
         var carInfo = mineFragmentViewModel.carInfo
         binding.fire.text = if (carInfo.value?.is_fire == 1) "着火了" else "没事"
-        binding.rain.text = carInfo.value?.humidity.toString()
+//        binding.rain.text = carInfo.value?.humidity.toString()
     }
 
     override fun onClick(v: View?) {

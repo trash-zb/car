@@ -2,6 +2,8 @@ package com.example.hupudemo.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.hupudemo.model.DataX
 import com.example.hupudemo.model.IndexInfo
 import com.example.mvvmdemo.Api.ApiManager
@@ -10,27 +12,19 @@ import kotlinx.coroutines.*
 import java.lang.Exception
 import java.util.concurrent.ThreadLocalRandom
 
-class IndexFragmentViewModel {
+
+//继承  声明周期
+class IndexFragmentViewModel : ViewModel(){
 
     private val baseUrl = "https://www.wanandroid.com"
     private val indexApi = ApiManager.getInstance()?.getDailyService(baseUrl)
     val indexInfo : MutableLiveData<IndexInfo> = MutableLiveData()
 
     fun getCarPostInfo(){
-        GlobalScope.launch {
+        viewModelScope.launch {
             withContext(Dispatchers.Main){
-                try {
-                    val result = Result.success(indexApi?.getCarPostInfo())
-                    indexInfo.value = result.getOrNull()
-                    Log.i("XXX", "xiecheng: ${indexInfo.value.toString()}")
-                }catch (e : Exception){
-                    e.printStackTrace()
-                }
+                    indexInfo.value = indexApi?.getCarPostInfo()
             }
-
         }
     }
-
-
-
 }

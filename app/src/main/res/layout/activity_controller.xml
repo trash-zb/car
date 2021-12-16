@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@drawable/close"/>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:text="已启动时间:"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/tv1"
+            android:id="@+id/start_time"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="600dp"
+            android:id="@+id/LL_dangwei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/dangwei"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dangwei"/>
+                <ImageView
+                    android:id="@+id/dangwei_cricle"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dangwei_cricle"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/p"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/p"
+                    android:id="@+id/r"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/r"/>
+                <ImageView
+                    android:layout_marginTop="21dp"
+                    android:layout_below="@+id/r"
+                    android:id="@+id/n"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/n"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/n"
+                    android:id="@+id/d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/d"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/LL_dangwei"
+            android:id="@+id/LL_caozuo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/shache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shache_before"/>
+            <Button
+                android:id="@+id/youmen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/youmen_before"/>
+            <Button
+                android:layout_toRightOf="@+id/LL1"
+                android:id="@+id/shousha"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/shousha_stop"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>
